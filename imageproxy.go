@@ -140,7 +140,7 @@ func (p *Proxy) serveImage(w http.ResponseWriter, r *http.Request) {
 	defer resp.Body.Close()
 
 	cached := resp.Header.Get(httpcache.XFromCache)
-	glog.Infof("request: %v (served from cache: %v)", *req, cached == "1")
+	//glog.Infof("request: %v (served from cache: %v)", *req, cached == "1")
 
 	copyHeader(w, resp, "Cache-Control")
 	copyHeader(w, resp, "Last-Modified")
